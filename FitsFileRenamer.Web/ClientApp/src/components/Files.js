@@ -5,7 +5,7 @@ export class Files extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {files: [], path: '', loading: true};
+        this.state = {files: [], path: 'F:\\TEMP\\LIGHT', loading: true};
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -29,13 +29,27 @@ export class Files extends Component {
                 <tr>
                     <th>FullPathName</th>
                     <th>Date</th>
+                    <th>Date UTC</th>
+                    <th>Filter</th>
+                    <th>Exposure</th>
+                    <th>Type</th>
+                    <th>Gain</th>
+                    <th>Set Temp</th>
+                    <th>Actual Temp</th>
                 </tr>
                 </thead>
                 <tbody>
                 {files.map(file =>
-                    <tr key={file.FullPathName}>
-                        <td>{file.FullPathName}</td>
-                        <td>{file.Date}</td>
+                    <tr key={file.fullPathNamme}>
+                        <td>{file.fullPathNamme}</td>
+                        <td>{file.date}</td>
+                        <td>{file.dateUtc}</td>
+                        <td>{file.filter}</td>
+                        <td>{file.exposure}</td>
+                        <td>{file.imageType}</td>
+                        <td>{file.gain}</td>
+                        <td>{file.setTemperature}</td>
+                        <td>{file.actualTemperature}</td>
                     </tr>
                 )}
                 </tbody>

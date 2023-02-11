@@ -15,8 +15,8 @@ public class FilesController : ControllerBase {
     }
 
     [HttpGet]
-    public IActionResult Get([FromQuery(Name = "path")]string path) {
-        var dtos = _fitsService.OpenDirectory(path);
+    public async Task<IActionResult> Get([FromQuery(Name = "path")]string path) {
+        var dtos = await _fitsService.OpenDirectory(path);
         return Ok(dtos);
     }
 }

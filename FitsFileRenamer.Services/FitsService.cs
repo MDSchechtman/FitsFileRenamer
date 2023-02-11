@@ -4,7 +4,7 @@ using FitsFileRenamer.Common;
 namespace FitsFileRenamer.Services;
 
 public interface IFitsService {
-    IEnumerable<FitsFileDto> OpenDirectory(string rootPath);
+    Task<IEnumerable<FitsFileDto>> OpenDirectory(string rootPath);
 }
 
 public class FitsService : IFitsService {
@@ -13,8 +13,8 @@ public class FitsService : IFitsService {
     public FitsService(IFileService fileService) {
         _fileService = fileService;
     }
-    public IEnumerable<FitsFileDto> OpenDirectory(string rootPath) {
+    public async Task<IEnumerable<FitsFileDto>> OpenDirectory(string rootPath) {
         var paths = _fileService.ReadAllFiles(rootPath);
-        return FitsUtility.LoadMetadata(paths);
+        return await FitsUtility.LoadMetadata(paths);
     }
 }

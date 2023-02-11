@@ -1,23 +1,48 @@
 ﻿using FitsFileRenamer.Common;
-using JPFITS;
+using FitsLibrary;
 
 namespace FitsFileRename.Lib;
 
 public static class FitsUtility {
+    public static async Task<IEnumerable<FitsFileDto>> LoadMetadata(IEnumerable<string> paths) {
+        var reader = new FitsDocumentReader();
 
-    public static IEnumerable<FitsFileDto> LoadMetadata(IEnumerable<string> paths) {
-       var fitsImages = paths.Select(f => new FITSImage(f, true));
-       return fitsImages.Select(fitsImage => new FitsFileDto {
-               FullPathName = fitsImage.FullFileName,
-               Date = DateTime.Parse(fitsImage.Header.GetKeyValue("DATE-LOC")),
-               UtcDate = DateTime.Parse(fitsImage.Header.GetKeyValue("DATE-OBS")),
-               Exposure = double.Parse(fitsImage.Header.GetKeyValue("EXPOSURE")),
-               Filter = fitsImage.Header.GetKeyValue("FILTER"),
-               Gain = int.Parse(fitsImage.Header.GetKeyValue("GAIN")),
-               SetTemperature = double.Parse(fitsImage.Header.GetKeyValue("SET-TEMP")),
-               ActualTemperature = double.Parse(fitsImage.Header.GetKeyValue("CCD-TEMP")),
-               ImageType = fitsImage.Header.GetKeyValue("IMAGETYP")
-           })
-           .ToList();
+        var dtos = new List<FitsFileDto>();
+        foreach (var path in paths) {
+            var fits = await reader.ReadAsync(path);
+            var dto = new FitsFileDto {
+                FullPathName = path,
+                Filter = fits.Header["FILTER"] as string ?? string.Empty,
+                ImageType = fits.Header["IMAGETYP"] as string ?? string.Empty,
+            };
+
+            if (DateTime.TryParse(fits.Header["DATE-LOC"] as string, out var dateLoc)) {
+                dto.Date = dateLoc;
+            }
+            
+            if (DateTime.TryParse(fits.Header["DATE-OBS"] as string, out var dateObs)) {
+                dto.DateUtc = dateObs;
+            }
+            
+            if (double.TryParse(fits.Header["EXPOSURE"]?.ToString(), out var exposure)) {
+                dto.Exposure = exposure;
+            }
+
+            if (int.TryParse(fits.Header["GAIN"]?.ToString(), out var gain)) {
+                dto.Gain = gain;
+            }
+            
+            if (double.TryParse(fits.Header["SET-TEMP"]?.ToString(), out var setTemperature)) {
+                dto.SetTemperature = setTemperature;
+            }
+            
+            if (double.TryParse(fits.Header["CCD-TEMP"]?.ToString(), out var actualTemperature)) {
+                dto.ActualTemperature = actualTemperature;
+            }
+
+            dtos.Add(dto);
+        }
+
+        return dtos;
     }
 }

@@ -8,13 +8,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Reference Include="JPFITS">
-        <HintPath>..\JPFITS\JPFITS.dll</HintPath>
-      </Reference>
+      <ProjectReference Include="..\FitsFileRenamer.Common\FitsFileRenamer.Common.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\FitsFileRenamer.Common\FitsFileRenamer.Common.csproj" />
+      <PackageReference Include="FitsLibrary" Version="0.2.0-pre" />
     </ItemGroup>
 
 </Project>
