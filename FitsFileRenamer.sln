@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitsFileRenamer.Common", "F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitsFileRenamer.Services", "FitsFileRenamer.Services\FitsFileRenamer.Services.csproj", "{48295975-579D-4690-84B9-A4E52F07FC90}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitsFileRname.Desktop", "FitsFileRname.Desktop\FitsFileRname.Desktop.csproj", "{79263EB7-4470-45FD-8ED0-5AB481F03E49}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{48295975-579D-4690-84B9-A4E52F07FC90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48295975-579D-4690-84B9-A4E52F07FC90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48295975-579D-4690-84B9-A4E52F07FC90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79263EB7-4470-45FD-8ED0-5AB481F03E49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79263EB7-4470-45FD-8ED0-5AB481F03E49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79263EB7-4470-45FD-8ED0-5AB481F03E49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79263EB7-4470-45FD-8ED0-5AB481F03E49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
