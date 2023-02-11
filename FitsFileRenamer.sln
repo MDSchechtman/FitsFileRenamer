@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitsFileRenamer.Lib", "FitsFileRenamer.Lib\FitsFileRenamer.Lib.csproj", "{B0F8AD52-CBFE-4D24-8A9B-AAF96677D7F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitsFileRenamer.Web", "FitsFileRenamer.Web\FitsFileRenamer.Web.csproj", "{DCECAC93-9478-4A8F-BC84-F00397AC7DE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitsFileRenamer.Common", "FitsFileRenamer.Common\FitsFileRenamer.Common.csproj", "{485B36FA-30E7-48BA-A049-BA84DE5CD9A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitsFileRenamer.Services", "FitsFileRenamer.Services\FitsFileRenamer.Services.csproj", "{48295975-579D-4690-84B9-A4E52F07FC90}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0F8AD52-CBFE-4D24-8A9B-AAF96677D7F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0F8AD52-CBFE-4D24-8A9B-AAF96677D7F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0F8AD52-CBFE-4D24-8A9B-AAF96677D7F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0F8AD52-CBFE-4D24-8A9B-AAF96677D7F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCECAC93-9478-4A8F-BC84-F00397AC7DE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCECAC93-9478-4A8F-BC84-F00397AC7DE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCECAC93-9478-4A8F-BC84-F00397AC7DE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCECAC93-9478-4A8F-BC84-F00397AC7DE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{485B36FA-30E7-48BA-A049-BA84DE5CD9A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{485B36FA-30E7-48BA-A049-BA84DE5CD9A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{485B36FA-30E7-48BA-A049-BA84DE5CD9A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{485B36FA-30E7-48BA-A049-BA84DE5CD9A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48295975-579D-4690-84B9-A4E52F07FC90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48295975-579D-4690-84B9-A4E52F07FC90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48295975-579D-4690-84B9-A4E52F07FC90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48295975-579D-4690-84B9-A4E52F07FC90}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
