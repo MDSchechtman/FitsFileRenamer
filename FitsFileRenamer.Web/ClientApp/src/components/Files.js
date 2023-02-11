@@ -6,12 +6,20 @@ export class Files extends Component {
     constructor(props) {
         super(props);
         this.state = {files: [], path: '', loading: true};
-        this.handleSelect = this.handleSelect.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleSelect(event) {
-        console.log(event);
-        //this.populateFilesData();
+    componentDidMount() {
+    }
+
+    handleChange(event) {
+        this.setState({ path: event.target.value });
+    }
+
+    async handleSubmit(event) {
+        this.populateFilesData();
+        event.preventDefault();
     }
 
     static renderFiles(files) {
@@ -43,7 +51,10 @@ export class Files extends Component {
         return (
             <div>
                 <h1 id="tableLabel">Files</h1>
-                <input directory="" webkitdirectory="" mozdirectory="" type="file" onChange={this.handleSelect} />
+                <form onSubmit={this.handleSubmit}>
+                    <input type="text" value={this.state.path} onChange={this.handleChange} />
+                    <input type="submit" value="Submit" onSubmit={this.submit} />
+                </form>
                 {contents}
             </div>
         );
@@ -52,6 +63,6 @@ export class Files extends Component {
     async populateFilesData() {
         const response = await fetch(`files?path=${this.state.path}`);
         const data = await response.json();
-        this.setState({forecasts: data, loading: false});
+        this.setState({files: data, loading: false});
     }
 }
